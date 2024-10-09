@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/Person")
+@RequestMapping("/person")
 public class PersonController {
-    List<Person> productsList = new ArrayList<Person>();
+    List<Person> personList = new ArrayList<Person>();
 
     @GetMapping("/getPerson")
     public List<Person> getProducts() {
-        return productsList;
+        return personList;
     }
 
     @PostMapping("/createPerson")
     public List<Person> addProducts(@Valid @RequestBody Person person) {
-        productsList.add(person);
-        return productsList;
+        personList.add(person);
+        return personList;
     }
 }
