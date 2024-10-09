@@ -1,21 +1,22 @@
 package ie.atu.week3lab3;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @RestController
-@RequestMapping("/product")
-public class ProductController {
+@RequestMapping("/Person")
+public class PersonController {
     List<Person> productsList = new ArrayList<Person>();
 
-    @GetMapping("/getProducts")
+    @GetMapping("/getPerson")
     public List<Person> getProducts() {
         return productsList;
     }
 
-    @PostMapping("/addProducts")
-    public List<Person> addProducts(@RequestBody Person person) {
+    @PostMapping("/createPerson")
+    public List<Person> addProducts(@Valid @RequestBody Person person) {
         productsList.add(person);
         return productsList;
     }
