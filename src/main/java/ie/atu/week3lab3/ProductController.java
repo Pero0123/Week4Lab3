@@ -7,16 +7,16 @@ import java.util.*;
 @RestController
 @RequestMapping("/product")
 public class ProductController {
-    List<Product> productsList = new ArrayList<Product>();
+    List<Person> productsList = new ArrayList<Person>();
 
     @GetMapping("/getProducts")
-    public List<Product> getProducts() {
+    public List<Person> getProducts() {
         return productsList;
     }
 
     @PostMapping("/addProducts")
-    public List<Product> addProducts(@RequestBody Product product) {
-        productsList.add(product);
+    public List<Person> addProducts(@RequestBody Person person) {
+        productsList.add(person);
         return productsList;
     }
 }
